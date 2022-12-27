@@ -23,4 +23,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
+  
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
