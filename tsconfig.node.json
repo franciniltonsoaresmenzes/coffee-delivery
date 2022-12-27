@@ -3,12 +3,7 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ]
+    "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts"]
 }
