@@ -1,36 +1,26 @@
 import { ShoppingCart } from 'phosphor-react'
 
 import coffeDeliveryBanner from '../../../../assets/coffe-banner.png'
+import { InfoWithIcon } from '../../../../components/InfoWithIcon'
+import { Subtitle, Title } from '../../../../components/Typography'
 
-import { BannerGridInfo, BannerIngo, BannerSection } from './styles'
+import { BannerGridInfo, BannerSection } from './styles'
 
 export function Banner() {
   return (
     <BannerSection>
       <div>
-        <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-        <h3>
+        <Title>Encontre o café perfeito para qualquer hora do dia</Title>
+        <Subtitle size="s" color="subtitle" as="h3">
           Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
           hora
-        </h3>
+        </Subtitle>
 
         <BannerGridInfo>
-          <BannerIngo>
-            <ShoppingCart size={16} weight="fill" />
-            Compra simples e segura
-          </BannerIngo>
-          <BannerIngo>
-            <ShoppingCart size={16} weight="fill" />
-            Compra simples e segura
-          </BannerIngo>
-          <BannerIngo>
-            <ShoppingCart size={16} weight="fill" />
-            Compra simples e segura
-          </BannerIngo>
-          <BannerIngo>
-            <ShoppingCart size={16} weight="fill" />
-            Compra simples e segura
-          </BannerIngo>
+          <InfoWithIcon
+            icon={<ShoppingCart size={16} weight="fill" />}
+            description="Compra simples e segura"
+          />
         </BannerGridInfo>
       </div>
       <div>
