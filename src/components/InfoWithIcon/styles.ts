@@ -1,15 +1,18 @@
 import styled from 'styled-components'
 
-export const InfoWithIconContainer = styled.div`
+interface InfoWithIconContainerProps {
+  variant: string
+}
+
+export const InfoWithIconContainer = styled.div<InfoWithIconContainerProps>`
   display: flex;
   align-items: center;
   gap: 12px;
 
   div {
-    background-color: ${({ theme }) => theme.color.brand['yellow--dark']};
+    background-color: ${({ variant }) => variant};
     border-radius: 100%;
-    width: 32px;
-    height: 32px;
+    padding: 8px;
 
     color: ${({ theme }) => theme.color.base.white};
 

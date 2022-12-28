@@ -23,6 +23,8 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
   padding: 0.5rem;
 
   border: 0;
@@ -35,4 +37,25 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
       color: ${variant === 'yellow' && theme.color.brand['yellow--dark']};
     }
   `}
+
+  .items-shop-lenght {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: ${({ theme }) => theme.color.brand['yellow--dark']};
+    color: ${({ theme }) => theme.color.base.white};
+
+    font-size: ${({ theme }) => theme.textSize.text['title--x-s']};
+    line-height: 1.3;
+    font-weight: 700;
+
+    position: absolute;
+    top: -7.5px;
+    right: -6px;
+  }
 `

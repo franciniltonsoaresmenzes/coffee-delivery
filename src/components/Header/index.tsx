@@ -5,6 +5,7 @@ import { HeaderButton, HeaderContainer } from './styles'
 import { NavLink } from 'react-router-dom'
 
 export function Header() {
+  const ItemsShopLenght = 0
   return (
     <HeaderContainer>
       <NavLink to="/">
@@ -19,6 +20,10 @@ export function Header() {
 
         <NavLink to="/checkout">
           <HeaderButton variant="yellow">
+            {ItemsShopLenght > 0 ? (
+              <span className="items-shop-lenght">{ItemsShopLenght}</span>
+            ) : null}
+
             <ShoppingCart size={22} weight="fill" />
           </HeaderButton>
         </NavLink>
