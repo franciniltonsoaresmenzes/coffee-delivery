@@ -1,20 +1,32 @@
 import styled, { css } from 'styled-components'
 
-export const Title = styled.h1`
+interface TitleProps {
+  size?: 'title--x-l' | 'title--l'
+  color?: string
+}
+
+export const Title = styled.h1<TitleProps>`
   font-family: 'Baloo 2', sans-serif;
-  font-size: ${({ theme }) => theme.textSize.title['title--x-l']};
+  font-size: ${({ theme, size }) => theme.textSize.title[size ?? 'title--x-l']};
   font-weight: 800;
   line-height: 1.3;
 
-  color: ${({ theme }) => theme.color.base.title};
+  color: ${({ theme, color }) => color ?? theme.color.base.title};
 `
 
-interface SubtitleProps {
+export const SubTitle = styled.h3`
+  font-family: 'Baloo 2';
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 130%;
+`
+
+interface TextProps {
   size: 's'
   color: 'subtitle'
 }
 
-export const Subtitle = styled.h3<SubtitleProps>`
+export const Text = styled.h3<TextProps>`
   ${({ theme, size, color }) => css`
     font-size: ${theme.textSize.title[`title--${size}`]};
     color: ${({ theme }) => theme.color.base[color]};

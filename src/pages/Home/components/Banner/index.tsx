@@ -5,13 +5,18 @@ import coffeDeliveryBanner from '../../../../assets/coffe-banner.png'
 import { InfoWithIcon } from '../../../../components/InfoWithIcon'
 import { Title } from '../../../../components/Typography'
 
-import { BannerGridInfo, BannerSection, SubtitleBanner } from './styles'
+import {
+  BannerContainer,
+  BannerGridInfo,
+  BannerSection,
+  SubtitleBanner,
+} from './styles'
 
 export function Banner() {
   const { color } = useTheme()
   return (
     <BannerSection>
-      <div className="container">
+      <BannerContainer className="container">
         <div>
           <Title>Encontre o café perfeito para qualquer hora do dia</Title>
           <SubtitleBanner size="s" color="subtitle" as="h3">
@@ -48,7 +53,7 @@ export function Banner() {
         <div>
           <img src={coffeDeliveryBanner} alt="" />
         </div>
-      </div>
+      </BannerContainer>
     </BannerSection>
   )
 }
