@@ -29,6 +29,10 @@ export const InputQuantityContainer = styled.div`
     width: 100%;
 
     border: 0;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   button {
