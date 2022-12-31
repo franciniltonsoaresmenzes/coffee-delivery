@@ -37,7 +37,7 @@ export function CardCoffee({ data }: CoffeeProps) {
 
   return (
     <CardCoffeeContainer>
-      <img src="/coffees/expresso-tradicional.png" alt="" />
+      <img src={`/coffees/${data.image}`} alt="" />
       {data.tags.map((tag) => (
         <TagCoffee key={tag}>{tag}</TagCoffee>
       ))}
