@@ -1,8 +1,9 @@
 import { CurrencyDollar, MapPin } from 'phosphor-react'
+import { FormCardContainer } from '../FormCard/styles'
 
 export function FormAdress() {
   return (
-    <div>
+    <FormCardContainer>
       <h1>Complete seu pedido</h1>
 
       <div>
@@ -40,6 +41,6 @@ export function FormAdress() {
         <button type="button">Cartão de crédito</button>
         <button type="button">Cartão de crédito</button>
       </div>
-    </div>
+    </FormCardContainer>
   )
 }
