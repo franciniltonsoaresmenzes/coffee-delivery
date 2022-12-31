@@ -1,4 +1,5 @@
 import { useTheme } from 'styled-components'
+import { coffees } from '../../../../APIFake/data'
 import { CardCoffee } from '../../../../components/CardCoffee'
 import { Title } from '../../../../components/Typography'
 import { ListCoffeContainer, ListCoffeSectionGrid } from './styles'
@@ -11,7 +12,9 @@ export function ListCoffe() {
         Nossos cafés
       </Title>
       <ListCoffeSectionGrid>
-        <CardCoffee />
+        {coffees.map((coffee) => (
+          <CardCoffee key={coffee.id} data={coffee} />
+        ))}
       </ListCoffeSectionGrid>
     </ListCoffeContainer>
   )

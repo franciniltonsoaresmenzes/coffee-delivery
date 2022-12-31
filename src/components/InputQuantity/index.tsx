@@ -3,17 +3,17 @@ import { useState } from 'react'
 import { InputQuantityContainer } from './styles'
 
 export function InputQuanity() {
-  const [quantity, setQuantity] = useState(1)
+  const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(1)
 
   function handleAddQuantity() {
-    if (quantity < 26) {
-      setQuantity(quantity + 1)
+    if (addOrRemoveQuantity < 26) {
+      setAddOrRemoveQuantity(addOrRemoveQuantity + 1)
     }
   }
 
   function handleRemoveQuantity() {
-    if (quantity > 1) {
-      setQuantity(quantity - 1)
+    if (addOrRemoveQuantity > 1) {
+      setAddOrRemoveQuantity(addOrRemoveQuantity - 1)
     }
   }
 
@@ -22,7 +22,7 @@ export function InputQuanity() {
       <button onClick={handleRemoveQuantity}>
         <Minus size={14} weight="fill" />
       </button>
-      <input type="text" value={quantity} disabled />
+      <input type="text" value={addOrRemoveQuantity} disabled />
       <button onClick={handleAddQuantity}>
         <Plus size={14} weight="fill" />
       </button>

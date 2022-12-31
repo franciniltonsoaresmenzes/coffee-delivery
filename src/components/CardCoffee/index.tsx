@@ -15,25 +15,43 @@ import {
 import { InputQuanity } from '../InputQuantity'
 import { Title } from '../Typography'
 
-export function CardCoffee() {
+interface Coffee {
+  id: string
+  name: string
+  description: string
+  tags: string[]
+  image: string
+  price: number
+  quantity: number
+}
+
+interface CoffeeProps {
+  data: Coffee
+}
+
+export function CardCoffee({ data }: CoffeeProps) {
   const { color } = useTheme()
+  function tranformNumberInString(number: number): string {
+    return number.toFixed(2).replace('.', ',')
+  }
+
   return (
     <CardCoffeeContainer>
       <img src="/coffees/expresso-tradicional.png" alt="" />
-      <TagCoffee>Tradicional</TagCoffee>
+      {data.tags.map((tag) => (
+        <TagCoffee key={tag}>{tag}</TagCoffee>
+      ))}
       <SubtitleCoffee weight="700" color={color.base.subtitle}>
-        Expresso Tradicional
+        {data.name}
       </SubtitleCoffee>
-      <TextCoffee color="label">
-        O tradicional café feito com água quente e grãos moídos
-      </TextCoffee>
+      <TextCoffee color="label">{data.description}</TextCoffee>
       <FlexInputCoffee>
         <ValueCoffee>
           <DollarSign as="span" color="text" size="s">
             R$
           </DollarSign>
           <Title as="span" color={color.base.text}>
-            9,90
+            {tranformNumberInString(data.price)}
           </Title>
         </ValueCoffee>
         <div>
