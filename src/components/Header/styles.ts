@@ -45,6 +45,15 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
     }
   `}
 
+  transition: .2s;
+
+  &:hover {
+    ${({ theme, variant }) => css`
+      background-color: ${variant === 'purple-dark' &&
+      theme.color.brand.purple};
+    `}
+  }
+
   .items-shop-lenght {
     width: 20px;
     height: 20px;

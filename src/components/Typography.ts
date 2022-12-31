@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components'
 
 interface TitleProps {
-  size?: 'title--x-l' | 'title--l'
+  size?: 'l' | 'x-l'
   color?: string
 }
 
 export const Title = styled.h1<TitleProps>`
   font-family: 'Baloo 2', sans-serif;
-  font-size: ${({ theme, size }) => theme.textSize.title[size ?? 'title--x-l']};
+  font-size: ${({ theme, size }) =>
+    theme.textSize.title[`title--${size ?? 'l'}`]};
   font-weight: 800;
   line-height: 1.3;
 
@@ -30,7 +31,7 @@ export const SubTitle = styled.h3<SubTitleProps>`
 
 interface TextProps {
   size?: 's' | 'l'
-  color?: 'subtitle' | 'label'
+  color?: 'subtitle' | 'label' | 'text'
   weight?: string
 }
 

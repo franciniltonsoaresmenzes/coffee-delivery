@@ -5,12 +5,15 @@ import { ShoppingCart } from 'phosphor-react'
 import { HeaderButton } from '../Header/styles'
 import {
   CardCoffeeContainer,
+  DollarSign,
   FlexInputCoffee,
   SubtitleCoffee,
   TagCoffee,
   TextCoffee,
+  ValueCoffee,
 } from './styles'
 import { InputQuanity } from '../InputQuantity'
+import { Title } from '../Typography'
 
 export function CardCoffee() {
   const { color } = useTheme()
@@ -25,9 +28,14 @@ export function CardCoffee() {
         O tradicional café feito com água quente e grãos moídos
       </TextCoffee>
       <FlexInputCoffee>
-        <span>
-          R$ <span>9,90</span>
-        </span>
+        <ValueCoffee>
+          <DollarSign as="span" color="text" size="s">
+            R$
+          </DollarSign>
+          <Title as="span" color={color.base.text}>
+            9,90
+          </Title>
+        </ValueCoffee>
         <div>
           <InputQuanity />
           <HeaderButton variant="purple-dark">

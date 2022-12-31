@@ -18,7 +18,9 @@ export function Banner() {
     <BannerSection>
       <BannerContainer className="container">
         <div>
-          <Title>Encontre o café perfeito para qualquer hora do dia</Title>
+          <Title size="x-l">
+            Encontre o café perfeito para qualquer hora do dia
+          </Title>
           <SubtitleBanner size="l" color="subtitle" as="h3">
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora

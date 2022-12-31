@@ -38,8 +38,8 @@ export const TagCoffee = styled.span`
   margin-top: 1rem;
   margin-bottom: 1.25rem;
 
-  color: ${({ theme }) => theme.color.brand['yellow--dark']};
-  background-color: ${({ theme }) => theme.color.brand['yellow--light']};
+  color: ${({ theme }) => theme.color.brand['yellow-dark']};
+  background-color: ${({ theme }) => theme.color.brand['yellow-light']};
 `
 
 export const SubtitleCoffee = styled(SubTitle)`
@@ -52,4 +52,16 @@ export const TextCoffee = styled(Text)`
 
 export const FlexInputCoffee = styled.div`
   display: flex;
+  flex-direction: row;
+  gap: 23px;
+
+  div {
+    display: flex;
+    gap: 8px;
+  }
+`
+export const ValueCoffee = styled.span``
+
+export const DollarSign = styled(Text)`
+  align-self: flex-end;
 `
