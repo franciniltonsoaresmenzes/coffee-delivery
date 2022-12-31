@@ -38,9 +38,11 @@ export function CardCoffee({ data }: CoffeeProps) {
   return (
     <CardCoffeeContainer>
       <img src={`/coffees/${data.image}`} alt="" />
-      {data.tags.map((tag) => (
-        <TagCoffee key={tag}>{tag}</TagCoffee>
-      ))}
+      <div>
+        {data.tags.map((tag) => (
+          <TagCoffee key={tag}>{tag}</TagCoffee>
+        ))}
+      </div>
       <SubtitleCoffee weight="700" color={color.base.subtitle}>
         {data.name}
       </SubtitleCoffee>

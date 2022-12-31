@@ -13,11 +13,16 @@ export const CardCoffeeContainer = styled.div`
 
   text-align: center;
 
+  > div {
+    display: flex;
+    gap: 0.25rem;
+  }
   img {
     display: block;
     margin-top: -60px;
     margin-right: auto;
     margin-left: auto;
+    pointer-events: none;
   }
 `
 
