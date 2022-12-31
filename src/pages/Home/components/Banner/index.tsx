@@ -19,7 +19,7 @@ export function Banner() {
       <BannerContainer className="container">
         <div>
           <Title>Encontre o café perfeito para qualquer hora do dia</Title>
-          <SubtitleBanner size="s" color="subtitle" as="h3">
+          <SubtitleBanner size="l" color="subtitle" as="h3">
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
           </SubtitleBanner>
@@ -28,7 +28,7 @@ export function Banner() {
             <InfoWithIcon
               icon={<ShoppingCart size={16} weight="fill" />}
               description="Compra simples e segura"
-              colorIcon={color.brand['yellow--dark']}
+              colorIcon={color.brand['yellow-dark']}
             />
 
             <InfoWithIcon

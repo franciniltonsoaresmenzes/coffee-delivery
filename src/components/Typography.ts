@@ -14,23 +14,31 @@ export const Title = styled.h1<TitleProps>`
   color: ${({ theme, color }) => color ?? theme.color.base.title};
 `
 
-export const SubTitle = styled.h3`
+interface SubTitleProps {
+  size?: 'title--l' | 'title--m' | 'title--s' | 'title--x-s'
+  color?: string
+  weight?: string
+}
+export const SubTitle = styled.h3<SubTitleProps>`
   font-family: 'Baloo 2';
-  font-weight: 800;
-  font-size: 32px;
+  font-weight: ${({ weight }) => weight ?? '800'};
+  font-size: ${({ theme, size }) => theme.textSize.text[size ?? 'title--l']};
   line-height: 130%;
+
+  color: ${({ theme, color }) => color ?? theme.color.base.title};
 `
 
 interface TextProps {
-  size: 's'
-  color: 'subtitle'
+  size?: 's' | 'l'
+  color?: 'subtitle' | 'label'
+  weight?: string
 }
 
-export const Text = styled.h3<TextProps>`
+export const Text = styled.p<TextProps>`
   ${({ theme, size, color }) => css`
-    font-size: ${theme.textSize.title[`title--${size}`]};
-    color: ${({ theme }) => theme.color.base[color]};
+    font-size: ${theme.textSize.text[`title--${size ?? 's'}`]};
+    color: ${({ theme }) => theme.color.base[color ?? 'subtitle']};
   `}
-  font-weight: 400;
+  font-weight: ${({ weight }) => weight ?? '400'};
   line-height: 1.3;
 `

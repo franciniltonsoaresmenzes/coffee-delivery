@@ -6,4 +6,5 @@ export const ListCoffeContainer = styled.section`
 
 export const ListCoffeSectionGrid = styled.section`
   margin-top: 3.375rem;
+  margin-bottom: 9.8125rem;
 `

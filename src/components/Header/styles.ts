@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
 `
 
 interface HeaderButtonProps {
-  variant: 'purple' | 'yellow'
+  variant: 'purple-light' | 'yellow-light' | 'purple-dark'
 }
 
 export const HeaderButton = styled.button<HeaderButtonProps>`
@@ -29,12 +29,19 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
 
   border: 0;
   border-radius: 8px;
+  ${({ theme, variant }) => css`
+    background-color: ${theme.color.brand[variant]};
+  `}
 
   ${({ theme, variant }) => css`
-    background-color: ${theme.color.brand[`${variant}--light`]};
-    color: ${theme.color.brand[`${variant}--dark`]};
+    color: ${variant === 'purple-dark' && theme.color.base.white};
+    color: ${variant === 'yellow-light' && theme.color.brand['yellow-dark']};
+  `}
+
+  ${({ theme, variant }) => css`
+    color: ${variant === 'purple-light' && theme.color.brand['purple-dark']};
     svg {
-      color: ${variant === 'yellow' && theme.color.brand['yellow--dark']};
+      color: ${variant === 'purple-light' && theme.color.brand.purple};
     }
   `}
 
@@ -47,7 +54,7 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
     align-items: center;
     justify-content: center;
 
-    background-color: ${({ theme }) => theme.color.brand['yellow--dark']};
+    background-color: ${({ theme }) => theme.color.brand['yellow-dark']};
     color: ${({ theme }) => theme.color.base.white};
 
     font-size: ${({ theme }) => theme.textSize.text['title--x-s']};

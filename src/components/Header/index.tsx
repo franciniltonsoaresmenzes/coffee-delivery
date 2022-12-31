@@ -13,13 +13,13 @@ export function Header() {
       </NavLink>
 
       <div>
-        <HeaderButton variant="purple">
+        <HeaderButton variant="purple-light">
           <MapPin size={22} weight="fill" />
           Porto Alegre, RS
         </HeaderButton>
 
         <NavLink to="/checkout">
-          <HeaderButton variant="yellow">
+          <HeaderButton variant="yellow-light">
             {ItemsShopLenght > 0 ? (
               <span className="items-shop-lenght">{ItemsShopLenght}</span>
             ) : null}
