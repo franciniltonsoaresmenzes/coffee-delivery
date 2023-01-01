@@ -5,18 +5,6 @@ export const FormAdressContainer = styled(FormCardContainer)`
   max-width: 40rem;
 `
 
-
-export const FlexSubtitle = styled.div`
-  display: flex;
-  gap: 0.5rem;
-
-  margin-bottom: 2rem;
-
-  svg {
-    color: ${({ theme }) => theme.color.brand['yellow-dark']};
-  }
-`
-
 export const GridInputsFormAdress = styled.div`
   display: grid;
   grid-template-columns: 12.5rem 17.25rem 3.75rem;

@@ -12,3 +12,15 @@ export const TitleChekout = styled(Title)`
   color: ${({ theme }) => theme.color.base.subtitle};
   margin-bottom: 1rem;
 `
+
+export const FlexSubtitleCheckout = styled.div`
+  display: flex;
+  gap: 0.5rem;
+
+  margin-bottom: 2rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+`

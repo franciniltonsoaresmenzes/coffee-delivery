@@ -1,20 +1,28 @@
 import { CurrencyDollar } from 'phosphor-react'
+import { useTheme } from 'styled-components'
+import { Text } from '../../../../components/Typography'
+import { FlexSubtitleCheckout } from '../../styles'
+import { InputPaymentsContainer } from './styles'
 
 export function InputPayments() {
+  const { color } = useTheme()
+
   return (
-    <div>
-      <div>
-        <CurrencyDollar size={22} />
+    <InputPaymentsContainer>
+      <FlexSubtitleCheckout>
+        <CurrencyDollar size={22} color={color.brand['purple-dark']} />
         <div>
-          <span>Pagamento</span>
-          <span>
+          <Text size="m" color="subtitle" as="span">
+            Pagamento
+          </Text>
+          <Text size="s" color="text" as="span">
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
-          </span>
+          </Text>
         </div>
-      </div>
+      </FlexSubtitleCheckout>
       <button type="button">Cartão de crédito</button>
       <button type="button">Cartão de crédito</button>
       <button type="button">Cartão de crédito</button>
-    </div>
+    </InputPaymentsContainer>
   )
 }

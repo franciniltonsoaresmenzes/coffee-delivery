@@ -1,17 +1,17 @@
 import { MapPin } from 'phosphor-react'
+import { useTheme } from 'styled-components'
 import { Input } from '../../../../components/Input'
 import { Text } from '../../../../components/Typography'
-import {
-  FlexSubtitle,
-  FormAdressContainer,
-  GridInputsFormAdress,
-} from './styles'
+import { FlexSubtitleCheckout } from '../../styles'
+import { FormAdressContainer, GridInputsFormAdress } from './styles'
 
 export function FormAdress() {
+  const { color } = useTheme()
+
   return (
     <FormAdressContainer>
-      <FlexSubtitle>
-        <MapPin size={22} />
+      <FlexSubtitleCheckout>
+        <MapPin size={22} color={color.brand['yellow-dark']} />
         <div>
           <Text size="m" color="subtitle" as="h3">
             Endereço de Entrega
@@ -20,7 +20,7 @@ export function FormAdress() {
             Informe o endereço onde deseja receber seu pedido
           </Text>
         </div>
-      </FlexSubtitle>
+      </FlexSubtitleCheckout>
 
       <GridInputsFormAdress>
         <Input type="text" placeholder="CEP" className="cep" />
