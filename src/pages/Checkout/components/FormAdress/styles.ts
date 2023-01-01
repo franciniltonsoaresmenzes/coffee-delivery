@@ -1,15 +1,10 @@
 import styled from 'styled-components'
-import { Title } from '../../../../components/Typography'
 import { FormCardContainer } from '../../styles'
 
 export const FormAdressContainer = styled(FormCardContainer)`
   max-width: 40rem;
 `
 
-export const TitleFormAdress = styled(Title)`
-  color: ${({ theme }) => theme.color.base.subtitle};
-  margin-bottom: 1rem;
-`
 
 export const FlexSubtitle = styled.div`
   display: flex;
