@@ -17,6 +17,9 @@ export const InputContainer = styled.div`
   line-height: 130%;
   color: ${({ theme }) => theme.color.base.label};
 
+  &:focus-within {
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.color.brand['yellow-dark']};
+  }
   input {
     width: 100%;
     height: 100%;
@@ -24,10 +27,6 @@ export const InputContainer = styled.div`
 
     background-color: transparent;
     border: 0;
-
-    &:focus-within {
-      box-shadow: 0 0 0 1px ${({ theme }) => theme.color.brand['yellow-dark']};
-    }
   }
 `
 
