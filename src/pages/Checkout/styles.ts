@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Title } from '../../components/Typography'
 
-export const CheckoutContainer = styled.section``
+export const CheckoutContainer = styled.form``
 
 export const FormCardContainer = styled.div`
   background-color: ${({ theme }) => theme.color.base.card};

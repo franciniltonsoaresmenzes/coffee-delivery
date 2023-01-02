@@ -1,5 +1,6 @@
-import { CurrencyDollar } from 'phosphor-react'
+import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+import { InputPaymentMetohd } from '../../../../components/InputsPaymentsMethod'
 import { Text } from '../../../../components/Typography'
 import { FlexSubtitleCheckout } from '../../styles'
 import { InputPaymentsContainer } from './styles'
@@ -20,9 +21,23 @@ export function InputPayments() {
           </Text>
         </div>
       </FlexSubtitleCheckout>
-      <button type="button">Cartão de crédito</button>
-      <button type="button">Cartão de crédito</button>
-      <button type="button">Cartão de crédito</button>
+      <InputPaymentMetohd
+        label="Cartão de Crédito"
+        tipo="credito"
+        icon={<CreditCard size={16} />}
+      />
+
+      <InputPaymentMetohd
+        label="Cartão de Débito"
+        tipo="debito"
+        icon={<Bank size={16} />}
+      />
+
+      <InputPaymentMetohd
+        label="Dinheiro"
+        tipo="dinheiro"
+        icon={<Money size={16} />}
+      />
     </InputPaymentsContainer>
   )
 }

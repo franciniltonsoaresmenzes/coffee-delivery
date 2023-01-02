@@ -31,9 +31,10 @@ export const SubTitle = styled.h3<SubTitleProps>`
 `
 
 interface TextProps {
-  size?: 's' | 'l' | 'm'
+  size?: 's' | 'l' | 'm' | 'x-s'
   color?: 'subtitle' | 'label' | 'text'
   weight?: string
+  lineHeight?: number
 }
 
 export const Text = styled.p<TextProps>`
@@ -42,5 +43,5 @@ export const Text = styled.p<TextProps>`
     color: ${({ theme }) => theme.color.base[color ?? 'subtitle']};
   `}
   font-weight: ${({ weight }) => weight ?? '400'};
-  line-height: 1.3;
+  line-height: ${({ lineHeight }) => lineHeight ?? '1.3'};
 `
