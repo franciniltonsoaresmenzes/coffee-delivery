@@ -1,4 +1,5 @@
 import { Trash } from 'phosphor-react'
+import { tranformNumberInDollar } from '../../functions/transformNumberInDolar'
 import { InputQuanity } from '../InputQuantity'
 import { Text } from '../Typography'
 import {
@@ -7,13 +8,21 @@ import {
   FlexInputQuantity,
 } from './styles'
 
-export function CoffeeCardShop() {
+interface CoffeeCardShopProps {
+  id?: string
+  name: string
+  image: string
+  price: number
+  quantity?: number
+}
+
+export function CoffeeCardShop({ name, image, price }: CoffeeCardShopProps) {
   return (
     <CoffeeCardShopContainer>
-      <img src="/coffees/expresso-tradicional.png" alt="" />
+      <img src={`/coffees/${image}`} alt="" />
       <div>
         <Text as="span" size="m" color="subtitle">
-          Expresso Tradicional
+          {name}
         </Text>
         <FlexInputQuantity>
           <InputQuanity />
@@ -27,7 +36,7 @@ export function CoffeeCardShop() {
       </div>
 
       <Text as="span" size="m" color="text" weight="700">
-        R$ 9,90
+        R$ {tranformNumberInDollar(price)}
       </Text>
     </CoffeeCardShopContainer>
   )

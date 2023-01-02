@@ -14,6 +14,7 @@ import {
 } from './styles'
 import { InputQuanity } from '../InputQuantity'
 import { Title } from '../Typography'
+import { tranformNumberInDollar } from '../../functions/transformNumberInDolar'
 
 interface Coffee {
   id: string
@@ -31,9 +32,6 @@ interface CoffeeProps {
 
 export function CardCoffee({ data }: CoffeeProps) {
   const { color } = useTheme()
-  function tranformNumberInString(number: number): string {
-    return number.toFixed(2).replace('.', ',')
-  }
 
   return (
     <CardCoffeeContainer>
@@ -53,7 +51,7 @@ export function CardCoffee({ data }: CoffeeProps) {
             R$
           </DollarSign>
           <Title as="span" color={color.base.text}>
-            {tranformNumberInString(data.price)}
+            {tranformNumberInDollar(data.price)}
           </Title>
         </ValueCoffee>
         <div>

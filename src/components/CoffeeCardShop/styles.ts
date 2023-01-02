@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const CoffeeCardShopContainer = styled.section`
   max-width: 23rem;
   padding: 0.5rem 0.25rem;
-  border-radius: 6px;
 
   display: flex;
   justify-content: space-between;
@@ -25,6 +24,7 @@ export const FlexInputQuantity = styled.div`
 export const ButtonTrash = styled.button`
   padding: 0.5rem;
   text-transform: uppercase;
+  border-radius: 6px;
 
   display: flex;
   gap: 0.25rem;

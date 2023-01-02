@@ -31,4 +31,9 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  img {
+    pointer-events: none;
+    height: auto;
+  }
 `
