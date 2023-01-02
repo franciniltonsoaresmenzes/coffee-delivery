@@ -4,6 +4,7 @@ export const InputQuantityContainer = styled.div`
   display: flex;
   flex-direction: row;
   background-color: ${({ theme }) => theme.color.base.button};
+  max-width: 4.25rem;
 
   border-radius: 6px;
   display: flex;

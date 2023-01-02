@@ -1,5 +1,10 @@
+import { CoffeeCardShop } from '../../../../components/CoffeeCardShop'
 import { CoffeeSelectedContainer } from './styles'
 
 export function CoffeeSelected() {
-  return <CoffeeSelectedContainer>o</CoffeeSelectedContainer>
+  return (
+    <CoffeeSelectedContainer>
+      <CoffeeCardShop />
+    </CoffeeSelectedContainer>
+  )
 }

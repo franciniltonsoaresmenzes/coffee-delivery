@@ -19,11 +19,11 @@ export function InputQuanity() {
 
   return (
     <InputQuantityContainer>
-      <button onClick={handleRemoveQuantity}>
+      <button onClick={handleRemoveQuantity} type="button">
         <Minus size={14} weight="fill" />
       </button>
       <input type="text" value={addOrRemoveQuantity} disabled />
-      <button onClick={handleAddQuantity}>
+      <button onClick={handleAddQuantity} type="button">
         <Plus size={14} weight="fill" />
       </button>
     </InputQuantityContainer>
