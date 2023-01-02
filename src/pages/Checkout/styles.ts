@@ -3,6 +3,11 @@ import { Title } from '../../components/Typography'
 
 export const CheckoutContainer = styled.form``
 
+export const CheckoutContainerFlex = styled.div`
+  display: flex;
+  gap: 2rem;
+`
+
 export const FormCardContainer = styled.section`
   background-color: ${({ theme }) => theme.color.base.card};
   padding: 40px;
