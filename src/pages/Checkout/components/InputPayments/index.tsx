@@ -3,7 +3,7 @@ import { useTheme } from 'styled-components'
 import { InputPaymentMetohd } from '../../../../components/InputsPaymentsMethod'
 import { Text } from '../../../../components/Typography'
 import { FlexSubtitleCheckout } from '../../styles'
-import { InputPaymentsContainer } from './styles'
+import { InputPaymentsContainer, InputPaymentsFlex } from './styles'
 
 export function InputPayments() {
   const { color } = useTheme()
@@ -21,23 +21,25 @@ export function InputPayments() {
           </Text>
         </div>
       </FlexSubtitleCheckout>
-      <InputPaymentMetohd
-        label="Cartão de Crédito"
-        tipo="credito"
-        icon={<CreditCard size={16} />}
-      />
+      <InputPaymentsFlex>
+        <InputPaymentMetohd
+          label="Cartão de Crédito"
+          tipo="credito"
+          icon={<CreditCard size={16} />}
+        />
 
-      <InputPaymentMetohd
-        label="Cartão de Débito"
-        tipo="debito"
-        icon={<Bank size={16} />}
-      />
+        <InputPaymentMetohd
+          label="Cartão de Débito"
+          tipo="debito"
+          icon={<Bank size={16} />}
+        />
 
-      <InputPaymentMetohd
-        label="Dinheiro"
-        tipo="dinheiro"
-        icon={<Money size={16} />}
-      />
+        <InputPaymentMetohd
+          label="Dinheiro"
+          tipo="dinheiro"
+          icon={<Money size={16} />}
+        />
+      </InputPaymentsFlex>
     </InputPaymentsContainer>
   )
 }

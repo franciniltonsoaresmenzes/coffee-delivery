@@ -29,6 +29,7 @@ interface InputProps {
 export const Input = styled.input<InputProps>`
   visibility: hidden;
   appearance: none;
+  position: absolute;
   ${({ idLabel }) => css`
     &:checked ~ label#${idLabel} {
       box-shadow: 0 0 0 1px ${({ theme }) => theme.color.brand.purple};
