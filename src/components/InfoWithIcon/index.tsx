@@ -4,7 +4,7 @@ import { InfoWithIconContainer } from './styles'
 
 interface InfoWithIconProps {
   icon: ReactNode
-  description: string
+  description: string | ReactNode
   colorIcon?: string
 }
 
@@ -16,7 +16,7 @@ export function InfoWithIcon({
   const { color } = useTheme()
 
   return (
-    <InfoWithIconContainer variant={colorIcon ?? color.brand['yellow--dark']}>
+    <InfoWithIconContainer variant={colorIcon ?? color.brand['yellow-dark']}>
       <div>{icon}</div>
       {description}
     </InfoWithIconContainer>
