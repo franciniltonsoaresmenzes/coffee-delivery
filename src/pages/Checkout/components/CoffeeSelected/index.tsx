@@ -1,6 +1,12 @@
 import { CoffeeCardShop } from '../../../../components/CoffeeCardShop'
-import { CoffeeSelectedContainer, ListCoffeeCardShop } from './styles'
+import {
+  CoffeeSelectedContainer,
+  FlexPrice,
+  FlexPriceContainer,
+  ListCoffeeCardShop,
+} from './styles'
 import { v4 as uuidv4 } from 'uuid'
+import { ButtonSubmit } from '../../../../components/ButtonSubmit'
 
 const CoffeeCard = [
   {
@@ -32,6 +38,24 @@ export function CoffeeSelected() {
           />
         </ListCoffeeCardShop>
       ))}
+      <FlexPriceContainer>
+        <FlexPrice>
+          <span>Total de itens</span>
+          <span>R$ 29,70</span>
+        </FlexPrice>
+
+        <FlexPrice>
+          <span>Entrega</span>
+          <span>R$ 3,50</span>
+        </FlexPrice>
+
+        <FlexPrice>
+          <span>Total</span>
+          <span>R$ 33,20</span>
+        </FlexPrice>
+      </FlexPriceContainer>
+
+      <ButtonSubmit />
     </CoffeeSelectedContainer>
   )
 }

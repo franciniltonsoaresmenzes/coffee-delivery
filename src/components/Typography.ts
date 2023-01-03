@@ -32,7 +32,7 @@ export const SubTitle = styled.h3<SubTitleProps>`
 
 interface TextProps {
   size?: 's' | 'l' | 'm' | 'x-s'
-  color?: 'subtitle' | 'label' | 'text'
+  color?: 'subtitle' | 'label' | 'text' | 'white'
   weight?: string
   lineHeight?: number
 }
