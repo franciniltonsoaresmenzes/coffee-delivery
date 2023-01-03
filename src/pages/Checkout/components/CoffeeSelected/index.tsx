@@ -7,6 +7,7 @@ import {
 } from './styles'
 import { v4 as uuidv4 } from 'uuid'
 import { ButtonSubmit } from '../../../../components/ButtonSubmit'
+import { Text } from '../../../../components/Typography'
 
 const CoffeeCard = [
   {
@@ -40,22 +41,34 @@ export function CoffeeSelected() {
       ))}
       <FlexPriceContainer>
         <FlexPrice>
-          <span>Total de itens</span>
-          <span>R$ 29,70</span>
+          <Text as="span" size="s" color="text">
+            Total de itens
+          </Text>
+          <Text as="span" size="s" color="text">
+            R$ 29,70
+          </Text>
         </FlexPrice>
 
         <FlexPrice>
-          <span>Entrega</span>
-          <span>R$ 3,50</span>
+          <Text as="span" size="s" color="text">
+            Entrega
+          </Text>
+          <Text as="span" size="s" color="text">
+            R$ 3,50
+          </Text>
         </FlexPrice>
 
         <FlexPrice>
-          <span>Total</span>
-          <span>R$ 33,20</span>
+          <Text as="span" size="l" color="subtitle" weight="700">
+            Total
+          </Text>
+          <Text as="span" size="l" color="subtitle" weight="700">
+            R$ 33,20
+          </Text>
         </FlexPrice>
       </FlexPriceContainer>
 
-      <ButtonSubmit />
+      <ButtonSubmit>confirmar pedido</ButtonSubmit>
     </CoffeeSelectedContainer>
   )
 }

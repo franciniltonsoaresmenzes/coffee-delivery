@@ -1,11 +1,16 @@
+import { ReactNode } from 'react'
 import { Text } from '../Typography'
 import { ButtonSubmitContainer } from './styles'
 
-export function ButtonSubmit() {
+interface ButtonSubmitProps {
+  children: ReactNode | string
+}
+
+export function ButtonSubmit({ children }: ButtonSubmitProps) {
   return (
     <ButtonSubmitContainer>
       <Text as="span" size="s" color="white" weight="700">
-        confirmar pedido
+        {children}
       </Text>
     </ButtonSubmitContainer>
   )
