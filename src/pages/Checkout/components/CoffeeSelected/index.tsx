@@ -5,70 +5,70 @@ import {
   FlexPriceContainer,
   ListCoffeeCardShop,
 } from './styles'
-import { v4 as uuidv4 } from 'uuid'
 import { ButtonSubmit } from '../../../../components/ButtonSubmit'
 import { Text } from '../../../../components/Typography'
+import { useContext } from 'react'
+import { CoffeeShopContext } from '../../../../contexts/CoffeeShopProvider'
 
-const CoffeeCard = [
-  {
-    id: uuidv4(),
-    name: 'Expresso Tradicional',
-    image: '/expresso-tradicional.png',
-    price: 9.9,
-    quantity: 1,
-  },
-  {
-    id: uuidv4(),
-    name: 'Latte',
-    image: '/latte.png',
-    price: 9.9,
-    quantity: 1,
-  },
-]
+import { tranformNumberInDollar } from '../../../../functions/transformNumberInDolar'
+
 export function CoffeeSelected() {
+  const { coffee } = useContext(CoffeeShopContext)
+
+  const ItemsShopLenght = coffee.length
+
+  const taxaDeEntregas = 3.9
+
   return (
-    <CoffeeSelectedContainer>
-      {CoffeeCard.map((coffee) => (
-        <ListCoffeeCardShop key={coffee.id}>
-          <CoffeeCardShop
-            key={coffee.id}
-            name={coffee.name}
-            image={coffee.image}
-            price={coffee.price}
-            quantity={coffee.quantity}
-          />
-        </ListCoffeeCardShop>
-      ))}
-      <FlexPriceContainer>
-        <FlexPrice>
-          <Text as="span" size="s" color="text">
-            Total de itens
-          </Text>
-          <Text as="span" size="s" color="text">
-            R$ 29,70
-          </Text>
-        </FlexPrice>
+    <>
+      {ItemsShopLenght > 0 ? (
+        <CoffeeSelectedContainer>
+          {coffee.map((coffee) => (
+            <ListCoffeeCardShop key={coffee.id}>
+              <CoffeeCardShop key={coffee.id} coffee={coffee} />
+            </ListCoffeeCardShop>
+          ))}
+          <FlexPriceContainer>
+            <FlexPrice>
+              <Text as="span" size="s" color="text">
+                Total de itens
+              </Text>
+              <Text as="span" size="s" color="text">
+                {ItemsShopLenght}
+              </Text>
+            </FlexPrice>
 
-        <FlexPrice>
-          <Text as="span" size="s" color="text">
-            Entrega
-          </Text>
-          <Text as="span" size="s" color="text">
-            R$ 3,50
-          </Text>
-        </FlexPrice>
+            <FlexPrice>
+              <Text as="span" size="s" color="text">
+                Entrega
+              </Text>
+              <Text as="span" size="s" color="text">
+                R$ {tranformNumberInDollar(taxaDeEntregas)}
+              </Text>
+            </FlexPrice>
 
-        <FlexPrice>
-          <Text as="span" size="l" color="subtitle" weight="700">
-            Total
-          </Text>
-          <Text as="span" size="l" color="subtitle" weight="700">
-            R$ 33,20
-          </Text>
-        </FlexPrice>
-      </FlexPriceContainer>
+            <FlexPrice>
+              <Text as="span" size="l" color="subtitle" weight="700">
+                Total
+              </Text>
+              <Text as="span" size="l" color="subtitle" weight="700">
+                R${' '}
+                {tranformNumberInDollar(
+                  coffee.reduce(
+                    (accumulator, currentValue) =>
+                      accumulator + currentValue.price,
+                    0,
+                  ) *
+                    ItemsShopLenght +
+                    taxaDeEntregas,
+                )}
+              </Text>
+            </FlexPrice>
+          </FlexPriceContainer>
 
-      <ButtonSubmit>confirmar pedido</ButtonSubmit>
-    </CoffeeSelectedContainer>
+          <ButtonSubmit>confirmar pedido</ButtonSubmit>
+        </CoffeeSelectedContainer>
+      ) : null}
+    </>
   )
 }

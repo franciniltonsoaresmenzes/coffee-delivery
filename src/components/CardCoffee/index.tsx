@@ -15,6 +15,8 @@ import {
 import { InputQuanity } from '../InputQuantity'
 import { Title } from '../Typography'
 import { tranformNumberInDollar } from '../../functions/transformNumberInDolar'
+import { useContext, useState } from 'react'
+import { CoffeeShopContext } from '../../contexts/CoffeeShopProvider'
 
 interface Coffee {
   id: string
@@ -32,6 +34,26 @@ interface CoffeeProps {
 
 export function CardCoffee({ data }: CoffeeProps) {
   const { color } = useTheme()
+
+  const { addCoffeeShopCart } = useContext(CoffeeShopContext)
+
+  function handleAddCoffeShop(data: Coffee) {
+    addCoffeeShopCart(data)
+  }
+
+  const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(data.quantity)
+
+  function handleAddQuantity() {
+    if (addOrRemoveQuantity < 26) {
+      setAddOrRemoveQuantity(addOrRemoveQuantity + 1)
+    }
+  }
+
+  function handleRemoveQuantity() {
+    if (addOrRemoveQuantity > 1) {
+      setAddOrRemoveQuantity(addOrRemoveQuantity - 1)
+    }
+  }
 
   return (
     <CardCoffeeContainer>
@@ -55,8 +77,18 @@ export function CardCoffee({ data }: CoffeeProps) {
           </Title>
         </ValueCoffee>
         <div>
-          <InputQuanity />
-          <HeaderButton variant="purple-dark">
+          <InputQuanity
+            quantity={addOrRemoveQuantity}
+            addQuantity={handleAddQuantity}
+            removeQuanity={handleRemoveQuantity}
+          />
+          <HeaderButton
+            variant="purple-dark"
+            type="button"
+            onClick={() =>
+              handleAddCoffeShop({ ...data, quantity: addOrRemoveQuantity })
+            }
+          >
             <ShoppingCart size={22} weight="fill" />
           </HeaderButton>
         </div>

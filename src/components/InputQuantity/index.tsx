@@ -1,29 +1,24 @@
 import { Minus, Plus } from 'phosphor-react'
-import { useState } from 'react'
 import { InputQuantityContainer } from './styles'
 
-export function InputQuanity() {
-  const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(1)
+interface InputQuanityProps {
+  quantity: number
+  addQuantity: () => void
+  removeQuanity: () => void
+}
 
-  function handleAddQuantity() {
-    if (addOrRemoveQuantity < 26) {
-      setAddOrRemoveQuantity(addOrRemoveQuantity + 1)
-    }
-  }
-
-  function handleRemoveQuantity() {
-    if (addOrRemoveQuantity > 1) {
-      setAddOrRemoveQuantity(addOrRemoveQuantity - 1)
-    }
-  }
-
+export function InputQuanity({
+  quantity,
+  addQuantity,
+  removeQuanity,
+}: InputQuanityProps) {
   return (
     <InputQuantityContainer>
-      <button onClick={handleRemoveQuantity} type="button">
+      <button onClick={removeQuanity} type="button">
         <Minus size={14} weight="fill" />
       </button>
-      <input type="text" value={addOrRemoveQuantity} disabled />
-      <button onClick={handleAddQuantity} type="button">
+      <input type="text" value={quantity} disabled />
+      <button onClick={addQuantity} type="button">
         <Plus size={14} weight="fill" />
       </button>
     </InputQuantityContainer>

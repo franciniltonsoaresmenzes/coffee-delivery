@@ -3,9 +3,14 @@ import logoCoffeeDelivery from '../../../public/logo-coffee-delivery.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { HeaderButton, HeaderContainer } from './styles'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CoffeeShopContext } from '../../contexts/CoffeeShopProvider'
 
 export function Header() {
-  const ItemsShopLenght = 0
+  const { coffee } = useContext(CoffeeShopContext)
+
+  const ItemsShopLenght = coffee.length
+
   return (
     <HeaderContainer>
       <NavLink to="/">
