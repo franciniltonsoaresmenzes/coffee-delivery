@@ -25,7 +25,6 @@ export function coffeeReducer(
 ): CoffeeState {
   switch (action.ActionTyper) {
     case CoffeeActions.ADD_NEW_COFFEE_SHOP: {
-      console.log(state.coffee)
       const coffeeAlreadyExstInCart = state.coffee.findIndex(
         (coffee) => coffee.id === action.payload.id,
       )
@@ -65,6 +64,22 @@ export function coffeeReducer(
           return {
             ...coffee,
             quantity: coffee.quantity - 1,
+          }
+        } else {
+          return coffee
+        }
+      })
+      return {
+        coffee: [...coffees],
+      }
+    }
+
+    case CoffeeActions.ADD_ITEM_COFFEE_SHOP: {
+      const coffees = state.coffee.map((coffee) => {
+        if (coffee.id === action.payload.id) {
+          return {
+            ...coffee,
+            quantity: coffee.quantity + 1,
           }
         } else {
           return coffee
