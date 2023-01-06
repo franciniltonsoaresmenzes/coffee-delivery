@@ -37,11 +37,12 @@ export function CardCoffee({ data }: CoffeeProps) {
 
   const { addCoffeeShopCart } = useContext(CoffeeShopContext)
 
+  const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(data.quantity)
+
   function handleAddCoffeShop(data: Coffee) {
     addCoffeeShopCart(data)
+    setAddOrRemoveQuantity(1)
   }
-
-  const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(data.quantity)
 
   function handleAddQuantity() {
     if (addOrRemoveQuantity < 26) {

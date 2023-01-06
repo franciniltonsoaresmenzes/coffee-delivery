@@ -15,7 +15,10 @@ import { tranformNumberInDollar } from '../../../../functions/transformNumberInD
 export function CoffeeSelected() {
   const { coffee } = useContext(CoffeeShopContext)
 
-  const ItemsShopLenght = coffee.length
+  const ItemsShopLenght = coffee.reduce(
+    (acumulador, currentValue) => currentValue.quantity + acumulador,
+    0,
+  )
 
   const taxaDeEntregas = 3.9
 
