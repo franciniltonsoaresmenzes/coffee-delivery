@@ -19,7 +19,7 @@ export function CoffeeCardShop({ coffee }: CoffeeCardShopProps) {
   const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(
     coffee.quantity,
   )
-  const { removeCoffeShopCart, addCoffeeShopCart } =
+  const { removeCoffeShopCart, addCoffeeShopCart, removeItemCoffeShopCart } =
     useContext(CoffeeShopContext)
 
   function handleAddQuantity() {
@@ -32,6 +32,7 @@ export function CoffeeCardShop({ coffee }: CoffeeCardShopProps) {
   function handleRemoveQuantity() {
     if (addOrRemoveQuantity > 1) {
       setAddOrRemoveQuantity(addOrRemoveQuantity - 1)
+      removeItemCoffeShopCart(coffee)
     }
   }
 

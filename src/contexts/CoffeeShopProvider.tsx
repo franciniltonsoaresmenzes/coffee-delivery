@@ -1,11 +1,16 @@
 import { createContext, ReactNode, useReducer } from 'react'
 import { CoffeeContext, coffeeReducer } from '../reduces/coffee/reduce'
-import { addNewCoffeeShop, removeCoffeeShop } from '../reduces/coffee/actions'
+import {
+  addNewCoffeeShop,
+  removeCoffeeShop,
+  removeItemCoffeeShop,
+} from '../reduces/coffee/actions'
 
 interface CoffeeShopContextTypes {
   coffee: CoffeeContext[]
   addCoffeeShopCart: (data: CoffeeContext) => void
   removeCoffeShopCart: (idCoffee: string) => void
+  removeItemCoffeShopCart: (data: CoffeeContext) => void
 }
 
 export const CoffeeShopContext = createContext({} as CoffeeShopContextTypes)
@@ -25,11 +30,20 @@ export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
     dispatch(removeCoffeeShop(idCoffee))
   }
 
+  function removeItemCoffeShopCart(data: CoffeeContext) {
+    dispatch(removeItemCoffeeShop(data))
+  }
+
   const { coffee } = coffeeState
 
   return (
     <CoffeeShopContext.Provider
-      value={{ addCoffeeShopCart, coffee, removeCoffeShopCart }}
+      value={{
+        addCoffeeShopCart,
+        coffee,
+        removeCoffeShopCart,
+        removeItemCoffeShopCart,
+      }}
     >
       {children}
     </CoffeeShopContext.Provider>
