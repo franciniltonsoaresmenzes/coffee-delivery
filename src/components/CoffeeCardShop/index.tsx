@@ -1,5 +1,5 @@
 import { Trash } from 'phosphor-react'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { CoffeeShopContext } from '../../contexts/CoffeeShopProvider'
 import { tranformNumberInDollar } from '../../functions/transformNumberInDolar'
 import { CoffeeContext } from '../../reduces/coffee/reduce'
@@ -19,13 +19,13 @@ export function CoffeeCardShop({ coffee }: CoffeeCardShopProps) {
   const [addOrRemoveQuantity, setAddOrRemoveQuantity] = useState(
     coffee.quantity,
   )
-  const { removeCoffeShopCart, addCoffeeShopCart, removeItemCoffeShopCart } =
+  const { removeCoffeShopCart, removeItemCoffeShopCart, addItemCoffeShopCart } =
     useContext(CoffeeShopContext)
 
   function handleAddQuantity() {
     if (addOrRemoveQuantity < 26) {
       setAddOrRemoveQuantity(addOrRemoveQuantity + 1)
-      addCoffeeShopCart(coffee)
+      addItemCoffeShopCart(coffee)
     }
   }
 

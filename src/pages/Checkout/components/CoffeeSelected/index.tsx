@@ -24,7 +24,7 @@ export function CoffeeSelected() {
 
   return (
     <>
-      {ItemsShopLenght > 0 ? (
+      {coffee.length > 0 ? (
         <CoffeeSelectedContainer>
           {coffee.map((coffee) => (
             <ListCoffeeCardShop key={coffee.id}>

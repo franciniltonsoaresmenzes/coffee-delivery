@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useReducer } from 'react'
 import { CoffeeContext, coffeeReducer } from '../reduces/coffee/reduce'
 import {
+  addItemCoffeeShop,
   addNewCoffeeShop,
   removeCoffeeShop,
   removeItemCoffeeShop,
@@ -9,6 +10,7 @@ import {
 interface CoffeeShopContextTypes {
   coffee: CoffeeContext[]
   addCoffeeShopCart: (data: CoffeeContext) => void
+  addItemCoffeShopCart: (data: CoffeeContext) => void
   removeCoffeShopCart: (idCoffee: string) => void
   removeItemCoffeShopCart: (data: CoffeeContext) => void
 }
@@ -34,6 +36,10 @@ export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
     dispatch(removeItemCoffeeShop(data))
   }
 
+  function addItemCoffeShopCart(data: CoffeeContext) {
+    dispatch(addItemCoffeeShop(data))
+  }
+
   const { coffee } = coffeeState
 
   return (
@@ -43,6 +49,7 @@ export function CoffeeShopProvider({ children }: CoffeeShopContextProps) {
         coffee,
         removeCoffeShopCart,
         removeItemCoffeShopCart,
+        addItemCoffeShopCart,
       }}
     >
       {children}
