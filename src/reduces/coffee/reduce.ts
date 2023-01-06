@@ -59,6 +59,22 @@ export function coffeeReducer(
       }
     }
 
+    case CoffeeActions.REMOVE_ITEM_COFFEE_SHOP: {
+      const coffees = state.coffee.map((coffee) => {
+        if (coffee.id === action.payload.id) {
+          return {
+            ...coffee,
+            quantity: coffee.quantity - 1,
+          }
+        } else {
+          return coffee
+        }
+      })
+      return {
+        coffee: [...coffees],
+      }
+    }
+
     default:
       return {
         coffee: state.coffee,
