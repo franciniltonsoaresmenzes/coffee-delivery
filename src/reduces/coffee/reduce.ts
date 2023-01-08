@@ -90,6 +90,12 @@ export function coffeeReducer(
       }
     }
 
+    case CoffeeActions.CLEAR_ITEM_COFFEE_SHOP: {
+      return {
+        coffee: [],
+      }
+    }
+
     default:
       return {
         coffee: state.coffee,

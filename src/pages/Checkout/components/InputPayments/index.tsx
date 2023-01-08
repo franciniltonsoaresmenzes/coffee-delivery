@@ -1,12 +1,18 @@
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
+import { useFormContext } from 'react-hook-form'
 import { useTheme } from 'styled-components'
 import { InputPaymentMetohd } from '../../../../components/InputsPaymentsMethod'
 import { Text } from '../../../../components/Typography'
 import { FlexSubtitleCheckout } from '../../styles'
+import { ErrorsType } from '../FormAdress'
 import { InputPaymentsContainer, InputPaymentsFlex } from './styles'
 
 export function InputPayments() {
   const { color } = useTheme()
+
+  const { formState } = useFormContext()
+
+  const { errors } = formState as unknown as ErrorsType
 
   return (
     <InputPaymentsContainer>
@@ -26,6 +32,7 @@ export function InputPayments() {
           label="Cartão de Crédito"
           tipo="credito"
           icon={<CreditCard size={16} />}
+          error={errors.paymentMethod?.message}
         />
 
         <InputPaymentMetohd

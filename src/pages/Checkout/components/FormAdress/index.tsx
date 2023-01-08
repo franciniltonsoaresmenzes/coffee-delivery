@@ -6,7 +6,7 @@ import { Text } from '../../../../components/Typography'
 import { FlexSubtitleCheckout } from '../../styles'
 import { FormAdressContainer, GridInputsFormAdress } from './styles'
 
-interface ErrorsType {
+export interface ErrorsType {
   errors: {
     [key: string]: {
       message: string

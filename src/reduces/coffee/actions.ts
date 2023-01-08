@@ -5,6 +5,7 @@ export enum CoffeeActions {
   REMOVE_NEW_COFFEE_SHOP = 'REMOVE_NEW_COFFEE_SHOP',
   REMOVE_ITEM_COFFEE_SHOP = 'REMOVE_ITEM_COFFEE_SHOP',
   ADD_ITEM_COFFEE_SHOP = 'ADD_ITEM_COFFEE_SHOP',
+  CLEAR_ITEM_COFFEE_SHOP = 'CLEAR_ITEM_COFFEE_SHOP',
 }
 
 export function addNewCoffeeShop(newCoffee: CoffeeContext): actionType {
@@ -32,5 +33,12 @@ export function addItemCoffeeShop(newCoffee: CoffeeContext): actionType {
   return {
     ActionTyper: CoffeeActions.ADD_ITEM_COFFEE_SHOP,
     payload: newCoffee,
+  }
+}
+
+export function clearItemCoffeeShop(): actionType {
+  return {
+    ActionTyper: CoffeeActions.CLEAR_ITEM_COFFEE_SHOP,
+    payload: [],
   }
 }

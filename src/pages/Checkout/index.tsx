@@ -11,6 +11,8 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { CoffeeShopContext } from '../../contexts/CoffeeShopProvider'
 
 enum paymentMethods {
   credito = 'credito',
@@ -28,10 +30,7 @@ const setBuyNewCoffee = zod.object({
     .min(1, 'Rua invalida')
     .max(40, 'Você pode ser mais direto'),
   number: zod.string().min(1, 'Numero invalido').max(26, 'Numero muito grande'),
-  complementary: zod
-    .string()
-    .min(1, 'Preciso de mais informações')
-    .max(40, 'Você pode ser mais direto'),
+  complementary: zod.string(),
   district: zod
     .string()
     .min(1, 'Preciso de mais informações')
@@ -58,11 +57,14 @@ export function Checkout() {
     resolver: zodResolver(setBuyNewCoffee),
   })
 
+  const { clearItemCoffeeShopCart } = useContext(CoffeeShopContext)
   const { handleSubmit } = newCoffee
+
   const navigate = useNavigate()
 
   function CreateNewCoffee(data: BuyNewCoffee) {
     console.log(data)
+    clearItemCoffeeShopCart()
     navigate('/checkout/success', {
       state: data,
     })
