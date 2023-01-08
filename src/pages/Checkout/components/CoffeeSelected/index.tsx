@@ -37,7 +37,13 @@ export function CoffeeSelected() {
                 Total de itens
               </Text>
               <Text as="span" size="s" color="text">
-                {ItemsShopLenght}
+                R${' '}
+                {tranformNumberInDollar(
+                  coffee.reduce(
+                    (acumulador, coffee) => coffee.price + acumulador,
+                    0,
+                  ) * ItemsShopLenght,
+                )}
               </Text>
             </FlexPrice>
 
@@ -69,7 +75,7 @@ export function CoffeeSelected() {
             </FlexPrice>
           </FlexPriceContainer>
 
-          <ButtonSubmit>confirmar pedido</ButtonSubmit>
+          <ButtonSubmit type="submit">confirmar pedido</ButtonSubmit>
         </CoffeeSelectedContainer>
       ) : null}
     </>

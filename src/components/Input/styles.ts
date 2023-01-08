@@ -37,6 +37,8 @@ export const OptionalInput = styled(Text)`
 
 export const MesageError = styled.span`
   position: absolute;
+  pointer-events: none;
   top: -1rem;
   color: red;
+  font-size: 10px;
 `

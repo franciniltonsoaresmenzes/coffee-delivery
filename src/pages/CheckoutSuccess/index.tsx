@@ -1,11 +1,19 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useLocation } from 'react-router-dom'
 import { useTheme } from 'styled-components'
 import { InfoWithIcon } from '../../components/InfoWithIcon'
 import { Text, Title } from '../../components/Typography'
+import { BuyNewCoffee } from '../Checkout'
 import { CardInfo, CheckoutSuccessContainer } from './styles'
+
+interface LocationType {
+  state: BuyNewCoffee
+}
 
 export function CheckoutSuccess() {
   const { color } = useTheme()
+  const { state } = useLocation() as unknown as LocationType
+
   return (
     <CheckoutSuccessContainer className="container">
       <section>
@@ -22,9 +30,9 @@ export function CheckoutSuccess() {
               <Text size="m" color="text">
                 Entrega em{' '}
                 <Text as="span" size="m" color="text" weight="700">
-                  Rua João Daniel Martinelli, 102
+                  {state.street}, {state.number}
                 </Text>{' '}
-                - Porto Alegre, RS
+                {state.city}
               </Text>
             }
           />
@@ -49,7 +57,7 @@ export function CheckoutSuccess() {
               <Text size="m" color="text">
                 Pagamento na entrega{' '}
                 <Text as="p" size="m" color="text" weight="700">
-                  Cartão de Crédito
+                  {state.paymentMethod}
                 </Text>
               </Text>
             }
