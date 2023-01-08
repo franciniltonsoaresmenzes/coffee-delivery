@@ -1,5 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from 'styled-components'
 import { InfoWithIcon } from '../../components/InfoWithIcon'
 import { Text, Title } from '../../components/Typography'
@@ -13,6 +14,15 @@ interface LocationType {
 export function CheckoutSuccess() {
   const { color } = useTheme()
   const { state } = useLocation() as unknown as LocationType
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/')
+    }
+  }, [])
+
+  if (!state) return <></>
 
   return (
     <CheckoutSuccessContainer className="container">
@@ -57,7 +67,9 @@ export function CheckoutSuccess() {
               <Text size="m" color="text">
                 Pagamento na entrega{' '}
                 <Text as="p" size="m" color="text" weight="700">
-                  {state.paymentMethod}
+                  {state.paymentMethod === 'credito' && 'Cartão de credito'}
+                  {state.paymentMethod === 'debito' && 'Cartão de debito'}
+                  {state.paymentMethod === 'dinheiro' && 'Cartão de dinheiro'}
                 </Text>
               </Text>
             }

@@ -25,8 +25,19 @@ export const InputContainer = styled.div`
     height: 100%;
     padding: 12px;
 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    color: ${({ theme }) => theme.color.base.label};
+
     background-color: transparent;
     border: 0;
+
+    &:focus {
+      color: ${({ theme }) => theme.color.base.text};
+    }
   }
 `
 

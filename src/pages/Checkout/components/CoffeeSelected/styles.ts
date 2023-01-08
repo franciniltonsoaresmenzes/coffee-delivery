@@ -3,6 +3,7 @@ import { FormAdressContainer } from '../FormAdress/styles'
 
 export const CoffeeSelectedContainer = styled(FormAdressContainer)`
   max-width: 28rem;
+  width: 28rem;
 `
 
 export const ListCoffeeCardShop = styled.div`

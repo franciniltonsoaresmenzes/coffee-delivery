@@ -39,10 +39,7 @@ const setBuyNewCoffee = zod.object({
     .string()
     .min(1, 'Preciso de mais informações')
     .max(40, 'Você pode ser mais direto'),
-  state: zod
-    .string()
-    .min(1, 'UF invalido')
-    .max(40, 'Você pode ser mais direto'),
+  state: zod.string().min(1, 'UF invalido').max(2, 'Você pode ser mais direto'),
   paymentMethod: zod.nativeEnum(paymentMethods, {
     errorMap: () => {
       return { message: 'Informe Forma de pagamento' }

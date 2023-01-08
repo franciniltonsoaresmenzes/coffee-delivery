@@ -20,6 +20,7 @@ export const GridInputsFormAdress = styled.div`
   .rua {
     grid-column: 1/4;
     grid-row: 2;
+    text-transform: uppercase;
   }
 
   .numero {

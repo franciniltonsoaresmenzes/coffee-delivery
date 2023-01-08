@@ -40,6 +40,8 @@ export function FormAdress() {
           placeholder="CEP"
           className="cep"
           id="c"
+          minLength={1}
+          maxLength={26}
           {...register('c')}
           error={errors.c?.message}
         />
@@ -48,6 +50,8 @@ export function FormAdress() {
           placeholder="Rua"
           className="rua"
           id="street"
+          minLength={1}
+          maxLength={40}
           {...register('street')}
           error={errors.street?.message}
         />
@@ -56,6 +60,8 @@ export function FormAdress() {
           placeholder="Número"
           className="numero"
           id="number"
+          minLength={1}
+          maxLength={40}
           {...register('number')}
           error={errors.number?.message}
         />
@@ -74,6 +80,8 @@ export function FormAdress() {
           className="bairro"
           {...register('district')}
           error={errors.district?.message}
+          minLength={1}
+          maxLength={40}
           id="distryt"
         />
 
@@ -83,6 +91,8 @@ export function FormAdress() {
           className="cidade"
           id="city"
           {...register('city')}
+          minLength={1}
+          maxLength={40}
           error={errors.city?.message}
         />
         <Input
@@ -90,6 +100,8 @@ export function FormAdress() {
           placeholder="UF"
           className="uf"
           id="state"
+          minLength={1}
+          maxLength={2}
           {...register('state')}
           error={errors.state?.message}
         />

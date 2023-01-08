@@ -17,4 +17,9 @@ export const ButtonSubmitContainer = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.color.brand['yellow-dark']};
   }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
 `

@@ -24,60 +24,62 @@ export function CoffeeSelected() {
 
   return (
     <>
-      {coffee.length > 0 ? (
-        <CoffeeSelectedContainer>
-          {coffee.map((coffee) => (
-            <ListCoffeeCardShop key={coffee.id}>
-              <CoffeeCardShop key={coffee.id} coffee={coffee} />
-            </ListCoffeeCardShop>
-          ))}
-          <FlexPriceContainer>
-            <FlexPrice>
-              <Text as="span" size="s" color="text">
-                Total de itens
-              </Text>
-              <Text as="span" size="s" color="text">
-                R${' '}
-                {tranformNumberInDollar(
-                  coffee.reduce(
-                    (acumulador, coffee) => coffee.price + acumulador,
-                    0,
-                  ) * ItemsShopLenght,
-                )}
-              </Text>
-            </FlexPrice>
+      <CoffeeSelectedContainer>
+        {coffee.length > 0
+          ? coffee.map((coffee) => (
+              <ListCoffeeCardShop key={coffee.id}>
+                <CoffeeCardShop key={coffee.id} coffee={coffee} />
+              </ListCoffeeCardShop>
+            ))
+          : null}
+        <FlexPriceContainer>
+          <FlexPrice>
+            <Text as="span" size="s" color="text">
+              Total de itens
+            </Text>
+            <Text as="span" size="s" color="text">
+              R${' '}
+              {tranformNumberInDollar(
+                coffee.reduce(
+                  (acumulador, coffee) => coffee.price + acumulador,
+                  0,
+                ) * ItemsShopLenght,
+              )}
+            </Text>
+          </FlexPrice>
 
-            <FlexPrice>
-              <Text as="span" size="s" color="text">
-                Entrega
-              </Text>
-              <Text as="span" size="s" color="text">
-                R$ {tranformNumberInDollar(taxaDeEntregas)}
-              </Text>
-            </FlexPrice>
+          <FlexPrice>
+            <Text as="span" size="s" color="text">
+              Entrega
+            </Text>
+            <Text as="span" size="s" color="text">
+              R$ {tranformNumberInDollar(taxaDeEntregas)}
+            </Text>
+          </FlexPrice>
 
-            <FlexPrice>
-              <Text as="span" size="l" color="subtitle" weight="700">
-                Total
-              </Text>
-              <Text as="span" size="l" color="subtitle" weight="700">
-                R${' '}
-                {tranformNumberInDollar(
-                  coffee.reduce(
-                    (accumulator, currentValue) =>
-                      accumulator + currentValue.price,
-                    0,
-                  ) *
-                    ItemsShopLenght +
-                    taxaDeEntregas,
-                )}
-              </Text>
-            </FlexPrice>
-          </FlexPriceContainer>
+          <FlexPrice>
+            <Text as="span" size="l" color="subtitle" weight="700">
+              Total
+            </Text>
+            <Text as="span" size="l" color="subtitle" weight="700">
+              R${' '}
+              {tranformNumberInDollar(
+                coffee.reduce(
+                  (accumulator, currentValue) =>
+                    accumulator + currentValue.price,
+                  0,
+                ) *
+                  ItemsShopLenght +
+                  taxaDeEntregas,
+              )}
+            </Text>
+          </FlexPrice>
+        </FlexPriceContainer>
 
-          <ButtonSubmit type="submit">confirmar pedido</ButtonSubmit>
-        </CoffeeSelectedContainer>
-      ) : null}
+        <ButtonSubmit type="submit" disabled={!ItemsShopLenght}>
+          confirmar pedido
+        </ButtonSubmit>
+      </CoffeeSelectedContainer>
     </>
   )
 }
