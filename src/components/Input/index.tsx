@@ -4,7 +4,6 @@ import { InputContainer, MesageError, OptionalInput } from './styles'
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string
   optional?: boolean
-  className?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -23,3 +22,5 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     )
   },
 )
+
+Input.displayName = 'Input'
