@@ -1,34 +1,25 @@
-import { forwardRef, ReactNode } from 'react'
+import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
 import { Text } from '../Typography'
 import {
-  Input,
   InputPaymentMetohdContainer,
+  InputPaymentMetohdContent,
   MessageErrorInputPayment,
 } from './styles'
-import { useFormContext } from 'react-hook-form'
 
-type InputPaymentMetohdProps = {
+type InputPaymentMetohdProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string
   tipo?: string
   icon?: ReactNode
   error?: string
 }
 
-export const InputPaymentMetohd = forwardRef<
+const InputPaymentMetohd = forwardRef<
   HTMLInputElement,
   InputPaymentMetohdProps
->(({ label, icon, tipo, error }, ref) => {
-  const { register } = useFormContext()
+>(({ label, tipo, icon, error, ...props }, ref) => {
   return (
-    <>
-      <Input
-        id={tipo}
-        type="radio"
-        value={tipo}
-        idLabel={tipo}
-        ref={ref}
-        {...register('paymentMethod')}
-      />
+    <InputPaymentMetohdContent>
+      <input id={tipo} type="radio" value={tipo} ref={ref} {...props} />
       <InputPaymentMetohdContainer htmlFor={tipo} id={tipo}>
         <MessageErrorInputPayment>{error}</MessageErrorInputPayment>
         {icon}
@@ -36,6 +27,9 @@ export const InputPaymentMetohd = forwardRef<
           {label}
         </Text>
       </InputPaymentMetohdContainer>
-    </>
+    </InputPaymentMetohdContent>
   )
 })
+InputPaymentMetohd.displayName = 'InputPaymentMetohd'
+
+export default InputPaymentMetohd

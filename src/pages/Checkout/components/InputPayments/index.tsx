@@ -1,7 +1,7 @@
 import { CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
 import { useTheme } from 'styled-components'
-import { InputPaymentMetohd } from '../../../../components/InputsPaymentsMethod'
+import InputPaymentMetohd from '../../../../components/InputsPaymentsMethod'
 import { Text } from '../../../../components/Typography'
 import { FlexSubtitleCheckout } from '../../styles'
 import { ErrorsType } from '../FormAdress'
@@ -10,7 +10,7 @@ import { InputPaymentsContainer, InputPaymentsFlex } from './styles'
 export function InputPayments() {
   const { color } = useTheme()
 
-  const { formState } = useFormContext()
+  const { formState, register } = useFormContext()
 
   const { errors } = formState as unknown as ErrorsType
 
@@ -33,18 +33,21 @@ export function InputPayments() {
           tipo="credito"
           icon={<CreditCard size={16} />}
           error={errors.paymentMethod?.message}
+          {...register('paymentMethod')}
         />
 
         <InputPaymentMetohd
           label="Cartão de Débito"
           tipo="debito"
           icon={<Bank size={16} />}
+          {...register('paymentMethod')}
         />
 
         <InputPaymentMetohd
           label="Dinheiro"
           tipo="dinheiro"
           icon={<Money size={16} />}
+          {...register('paymentMethod')}
         />
       </InputPaymentsFlex>
     </InputPaymentsContainer>

@@ -1,4 +1,13 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+
+export const InputPaymentMetohdContent = styled.div`
+  input {
+    position: absolute;
+    &:checked ~ label {
+      box-shadow: 0 0 0 1px ${({ theme }) => theme.color.brand.purple};
+    }
+  }
+`
 
 export const InputPaymentMetohdContainer = styled.label`
   width: 178.67px;
@@ -27,16 +36,7 @@ interface InputProps {
   idLabel: string
 }
 
-export const Input = styled.input<InputProps>`
-  visibility: hidden;
-  appearance: none;
-  position: absolute;
-  ${({ idLabel }) => css`
-    &:checked ~ label#${idLabel} {
-      box-shadow: 0 0 0 1px ${({ theme }) => theme.color.brand.purple};
-    }
-  `}
-`
+export const Input = styled.input<InputProps>``
 
 export const MessageErrorInputPayment = styled.span`
   position: absolute;
