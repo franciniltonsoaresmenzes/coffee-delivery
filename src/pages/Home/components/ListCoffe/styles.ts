@@ -12,6 +12,4 @@ export const ListCoffeSectionGrid = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   column-gap: 2rem;
   row-gap: 2.5rem;
-
-  justify-content: center;
 `

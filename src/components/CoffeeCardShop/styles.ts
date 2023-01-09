@@ -34,4 +34,3 @@ export const ButtonTrash = styled.button`
     color: ${({ theme }) => theme.color.brand.purple};
   }
 `
-

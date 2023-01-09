@@ -20,7 +20,7 @@ export function CheckoutSuccess() {
     if (!state) {
       navigate('/')
     }
-  }, [])
+  }, [state, navigate])
 
   if (!state) return <></>
 
@@ -53,7 +53,7 @@ export function CheckoutSuccess() {
             description={
               <Text size="m" color="text">
                 Previsão de entrega{' '}
-                <Text as="p" size="m" color="text" weight="700">
+                <Text size="m" color="text" weight="700">
                   20 min - 30 min
                 </Text>
               </Text>
@@ -66,10 +66,10 @@ export function CheckoutSuccess() {
             description={
               <Text size="m" color="text">
                 Pagamento na entrega{' '}
-                <Text as="p" size="m" color="text" weight="700">
-                  {state.paymentMethod === 'credito' && 'Cartão de credito'}
-                  {state.paymentMethod === 'debito' && 'Cartão de debito'}
-                  {state.paymentMethod === 'dinheiro' && 'Cartão de dinheiro'}
+                <Text size="m" color="text" weight="700">
+                  {state.paymentMethod === 'dinheiro'
+                    ? 'Dinheiro'
+                    : 'Cartão ' + state.paymentMethod}
                 </Text>
               </Text>
             }

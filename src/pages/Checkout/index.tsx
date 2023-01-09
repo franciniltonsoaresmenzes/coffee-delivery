@@ -60,7 +60,6 @@ export function Checkout() {
   const navigate = useNavigate()
 
   function CreateNewCoffee(data: BuyNewCoffee) {
-    console.log(data)
     clearItemCoffeeShopCart()
     navigate('/checkout/success', {
       state: data,

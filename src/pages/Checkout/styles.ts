@@ -6,6 +6,15 @@ export const CheckoutContainer = styled.form``
 export const CheckoutContainerFlex = styled.div`
   display: flex;
   gap: 2rem;
+
+  @media screen and (max-width: 1138px) {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    div {
+      width: 100%;
+    }
+  }
 `
 
 export const FormCardContainer = styled.section`

@@ -6,6 +6,7 @@ export const CardCoffeeContainer = styled.div`
   width: 256px;
   padding: 20px;
   border-radius: 6px 36px;
+  margin: auto;
 
   display: flex;
   align-items: center;

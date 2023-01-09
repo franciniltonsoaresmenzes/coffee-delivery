@@ -10,6 +10,12 @@ export const CheckoutSuccessContainer = styled.div`
     max-width: 492px;
     max-height: 293px;
   }
+
+  @media screen and (max-width: 1024px) {
+    background: red;
+    flex-direction: column-reverse;
+    width: 500px;
+  }
 `
 
 export const CardInfo = styled.div`

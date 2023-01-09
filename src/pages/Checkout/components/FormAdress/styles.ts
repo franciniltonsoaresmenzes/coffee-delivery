@@ -3,6 +3,10 @@ import { FormCardContainer } from '../../styles'
 
 export const FormAdressContainer = styled(FormCardContainer)`
   max-width: 40rem;
+
+  @media screen and (max-width: 1138px) {
+    max-width: 100%;
+  }
 `
 
 export const GridInputsFormAdress = styled.div`
@@ -46,5 +50,36 @@ export const GridInputsFormAdress = styled.div`
   .uf {
     grid-column: 3/3;
     grid-row: 4;
+  }
+
+  @media screen and (max-width: 1138px) {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 620px) {
+    grid-template-columns: 10.5rem 13.25rem 3.75rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 8rem 6rem 3.75rem;
+    .cep {
+      grid-column: 1/1;
+      grid-row: 1;
+    }
+
+    .rua {
+      grid-column: 1/4;
+      grid-row: 2;
+    }
+
+    .numero {
+      grid-column: 2/4;
+      grid-row: 1;
+    }
+
+    .complementar {
+      grid-column: 1/3;
+      grid-row: 3;
+    }
   }
 `

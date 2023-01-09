@@ -10,12 +10,31 @@ export const BannerSection = styled.section`
 
   img {
     pointer-events: none;
+    max-width: 476px;
+  }
+
+  @media screen and (max-width: 800px) {
+    img {
+      display: block;
+      margin: auto;
+      width: 376px;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    img {
+      width: 176px;
+    }
   }
 `
 export const BannerContainer = styled.div`
-  display: flex;
   padding-top: 1rem;
   padding-bottom: 6.75rem;
+  display: flex;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
 `
 
 export const SubtitleBanner = styled(Text)``
@@ -28,4 +47,8 @@ export const BannerGridInfo = styled.div`
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
   row-gap: 20px;
+
+  @media screen and (max-width: 950px) {
+    grid-template-columns: 1fr;
+  }
 `

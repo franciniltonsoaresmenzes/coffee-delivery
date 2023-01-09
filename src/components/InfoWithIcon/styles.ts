@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface InfoWithIconContainerProps {
-  variant: string
+  variant?: string
 }
 
 export const InfoWithIconContainer = styled.div<InfoWithIconContainerProps>`

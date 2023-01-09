@@ -30,10 +30,10 @@ export const defaultTheme = {
       'title--x-s': '1.125rem',
     },
     text: {
-      'title--l': '20px',
-      'title--m': '16px',
-      'title--s': '14px',
-      'title--x-s': '12px',
+      'title--l': '1.25rem',
+      'title--m': '1rem',
+      'title--s': '0.875rem',
+      'title--x-s': '0.75rem',
     },
   },
 }

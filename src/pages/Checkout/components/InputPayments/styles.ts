@@ -7,6 +7,7 @@ export const InputPaymentsContainer = styled(FormCardContainer)`
 `
 
 export const InputPaymentsFlex = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(178.67px, 1fr));
   gap: 0.75rem;
 `

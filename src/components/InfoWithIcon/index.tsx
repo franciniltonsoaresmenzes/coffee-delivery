@@ -4,7 +4,7 @@ import { InfoWithIconContainer } from './styles'
 
 interface InfoWithIconProps {
   icon: ReactNode
-  description: string | ReactNode
+  description?: string | ReactNode
   colorIcon?: string
 }
 
