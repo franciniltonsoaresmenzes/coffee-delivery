@@ -20,7 +20,7 @@ export function Header() {
       <div>
         <HeaderButton variant="purple-light">
           <MapPin size={22} weight="fill" />
-          Porto Alegre, RS
+          Ourilândia do Norte, PA
         </HeaderButton>
 
         <NavLink to="/checkout">
