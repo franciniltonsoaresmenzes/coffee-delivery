@@ -18,11 +18,22 @@ export const CheckoutSuccessContainer = styled.div`
   }
 `
 
-export const CardInfo = styled.div`
+export const BorderGradient = styled.div`
   margin-top: 2.5rem;
+  background: linear-gradient(90deg, #dbac2c, #8047f8);
+  padding: 2px;
+  border-radius: 7px 37px;
+
+  overflow: hidden;
+`
+
+export const CardInfo = styled.section`
   padding: 2.5rem;
-  border: 1px solid ${({ theme }) => theme.color.brand['yellow-dark']};
-  border-radius: 6px 36px;
+  border-radius: 7px 37px;
+
+  height: 100%;
+
+  background-color: ${({ theme }) => theme.color.base.background};
 
   display: flex;
   flex-direction: column;
